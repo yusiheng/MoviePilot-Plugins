@@ -319,8 +319,10 @@ class PersonMetaLib(_PluginBase):
         for server in settings.MEDIASERVER.split(","):
             # 扫描所有媒体库
             logger.info(f"开始刮削服务器 {server} 的演员信息 ...")
+            logger.info(f"11111111111111111111111111111111111 ...")
+
             for library in self.mschain.librarys(server):
-                logger.info(f"11111111111111111111111111111111111 ...")
+                logger.info(f"22222222222222222222222222222 ...")
                 logger.info(f"开始刮削媒体库 [{library.name}] 的演员信息 ...")
 
                 # add by y,2024.08.25
