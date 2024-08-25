@@ -65,6 +65,7 @@ class PersonMetaLib(_PluginBase):
     _delay = 0
     _type = "all"
     _remove_nozh = False
+    _media_lib_names = ""
 
     def init_plugin(self, config: dict = None):
         self.tmdbchain = TmdbChain()
@@ -76,6 +77,7 @@ class PersonMetaLib(_PluginBase):
             self._type = config.get("type") or "all"
             self._delay = config.get("delay") or 0
             self._remove_nozh = config.get("remove_nozh") or False
+            self._media_lib_names = config.get("media_lib_names")
 
         # 停止现有任务
         self.stop_service()
@@ -107,7 +109,8 @@ class PersonMetaLib(_PluginBase):
             "cron": self._cron,
             "type": self._type,
             "delay": self._delay,
-            "remove_nozh": self._remove_nozh
+            "remove_nozh": self._remove_nozh,
+            "media_lib_names": self._media_lib_names
         })
 
     def get_state(self) -> bool:
@@ -256,6 +259,28 @@ class PersonMetaLib(_PluginBase):
                                 },
                                 'content': [
                                     {
+                                        'component': 'VTextField',
+                                        'props': {
+                                            'model': 'media_lib_names',
+                                            'label': ' 不需要刷新演员信息的媒体库名称',
+                                            'placeholder': '多个英文逗号分割'
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        'component': 'VRow',
+                        'content': [
+                            {
+                                'component': 'VCol',
+                                'props': {
+                                    'cols': 12,
+                                    'md': 6
+                                },
+                                'content': [
+                                    {
                                         'component': 'VSwitch',
                                         'props': {
                                             'model': 'remove_nozh',
@@ -274,6 +299,7 @@ class PersonMetaLib(_PluginBase):
             "cron": "",
             "type": "all",
             "delay": 30,
+            "media_lib_names": "",
             "remove_nozh": False
         }
 
@@ -316,21 +342,19 @@ class PersonMetaLib(_PluginBase):
         # 所有媒体服务器
         if not settings.MEDIASERVER:
             return
+
+        subscribe_medias = str(self._media_lib_names).split(",")
+
         for server in settings.MEDIASERVER.split(","):
             # 扫描所有媒体库
             logger.info(f"开始刮削服务器 {server} 的演员信息 ...")
-            logger.info(f"11111111111111111111111111111111111 ...")
 
             for library in self.mschain.librarys(server):
-                logger.info(f"22222222222222222222222222222 ...")
                 logger.info(f"开始刮削媒体库 [{library.name}] 的演员信息 ...")
 
                 # add by y,2024.08.25
-                if library.name == "电视节目":
-                    logger.info(f"当前媒体库 [{library.name}] 就是 电视节目")
-     
-                if library.name != "电视节目":
-                    logger.info(f"发现媒体库 {library.name} 的演员信息, 忽略掉 ...")
+                if library.name in subscribe_medias:
+                    logger.info(f"发现媒体库 {library.name} 不需要更新演员信息，忽略掉它...")
                     continue
 
                 for item in self.mschain.items(server, library.id):
