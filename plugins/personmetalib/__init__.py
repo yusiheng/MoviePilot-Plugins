@@ -40,7 +40,7 @@ class PersonMetaLib(_PluginBase):
     # 插件图标
     plugin_icon = "https://raw.githubusercontent.com/yusiheng/MoviePilot-Plugins/main/icons/actorperson.png"
     # 插件版本
-    plugin_version = "0.52"
+    plugin_version = "0.60"
     # 插件作者
     plugin_author = "yusiheng"
     # 作者主页
@@ -254,8 +254,7 @@ class PersonMetaLib(_PluginBase):
                             {
                                 'component': 'VCol',
                                 'props': {
-                                    'cols': 12,
-                                    'md': 4
+                                    'cols': 12
                                 },
                                 'content': [
                                     {
