@@ -1,11 +1,11 @@
 {
-    "YushHelper": {
-        "name": "yush_极影视助手",
-        "description": "极影视功能扩展",
+    "PersonMetaLib": {
+        "name": "演职人员信息更新(根据媒体库)",
+        "description": "带媒体库的演职人员信息更新",
         "labels": "媒体库",
         "version": "0.1",
-        "icon": "zvideo.png",
-        "author": "yush",
+        "icon": "actorperson.png",
+        "author": "yusiheng",
         "level": 2,
         "history": {
         }
