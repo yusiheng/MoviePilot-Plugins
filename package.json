@@ -3,8 +3,8 @@
         "name": "演职人员信息更新(根据媒体库)",
         "description": "带媒体库的演职人员信息更新",
         "labels": "媒体库",
-        "version": "0.11",
-        "icon": "actorperson.png",
+        "version": "0.12",
+        "icon": "https://raw.githubusercontent.com/yusiheng/MoviePilot-Plugins/main/icons/actorperson.png",
         "author": "yusiheng",
         "level": 2,
         "history": {

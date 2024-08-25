@@ -38,9 +38,9 @@ class PersonMetaLib(_PluginBase):
     # 插件描述
     plugin_desc = "指定媒体库的刮削演职人员图片以及中文名称。"
     # 插件图标
-    plugin_icon = "https://github.com/yusiheng/MoviePilot-Plugins/blob/main/icons/actorperson.png"
+    plugin_icon = "https://raw.githubusercontent.com/yusiheng/MoviePilot-Plugins/main/icons/actorperson.png"
     # 插件版本
-    plugin_version = "0.1"
+    plugin_version = "0.12"
     # 插件作者
     plugin_author = "yusiheng"
     # 作者主页
