@@ -38,7 +38,7 @@ class PersonMetaLib(_PluginBase):
     # 插件描述
     plugin_desc = "指定媒体库的刮削演职人员图片以及中文名称。"
     # 插件图标
-    plugin_icon = "actorperson.png"
+    plugin_icon = "https://github.com/yusiheng/MoviePilot-Plugins/blob/main/icons/actorperson.png"
     # 插件版本
     plugin_version = "0.1"
     # 插件作者
@@ -320,10 +320,15 @@ class PersonMetaLib(_PluginBase):
             # 扫描所有媒体库
             logger.info(f"开始刮削服务器 {server} 的演员信息 ...")
             for library in self.mschain.librarys(server):
-                logger.info(f"开始刮削媒体库 {library.name} 的演员信息 ...")
-                # add by y,2024.-8.25
+                logger.info(f"11111111111111111111111111111111111 ...")
+                logger.info(f"开始刮削媒体库 [{library.name}] 的演员信息 ...")
+
+                # add by y,2024.08.25
+                if library.name == "电视节目":
+                    logger.info(f"当前媒体库 [{library.name}] 就是 电视节目")
+     
                 if library.name != "电视节目":
-                    logger.info(f"开始刮削媒体库 {library.name} 的演员信息, 忽略掉 ...")
+                    logger.info(f"发现媒体库 {library.name} 的演员信息, 忽略掉 ...")
                     continue
 
                 for item in self.mschain.items(server, library.id):
