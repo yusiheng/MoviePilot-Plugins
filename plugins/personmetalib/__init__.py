@@ -255,15 +255,15 @@ class PersonMetaLib(_PluginBase):
                                 'component': 'VCol',
                                 'props': {
                                     'cols': 12,
-                                    'md': 6
+                                    'md': 4
                                 },
                                 'content': [
                                     {
                                         'component': 'VTextField',
                                         'props': {
                                             'model': 'media_lib_names',
-                                            'label': ' 不需要刷新演员信息的媒体库名称',
-                                            'placeholder': '多个英文逗号分割'
+                                            'label': ' 媒体库名称',
+                                            'placeholder': '要过滤掉的媒体库名称，英文逗号分割'
                                         }
                                     }
                                 ]
