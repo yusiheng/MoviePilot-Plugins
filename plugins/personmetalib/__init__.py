@@ -262,7 +262,7 @@ class PersonMetaLib(_PluginBase):
                                         'props': {
                                             'model': 'media_lib_names',
                                             'label': ' 媒体库名称',
-                                            'placeholder': '要过滤掉的媒体库名称，英文逗号分割'
+                                            'placeholder': '要匹配的媒体库名称，英文逗号分割;匹配规则是首位起始的模糊匹配'
                                         }
                                     }
                                 ]
@@ -334,6 +334,19 @@ class PersonMetaLib(_PluginBase):
         self.__update_item(server=existsinfo.server, item=iteminfo,
                            mediainfo=mediainfo, season=meta.begin_season)
 
+    # pattern:需要匹配的媒体库名称
+    # match_list: 配置文件中的媒体名称
+    # 匹配规则是从头开始的模糊匹配
+    def match_library_name(self,lib_name,match_list):
+        found=False
+        for e in match_list:
+            if re.match(lib_name,e):
+                logger.info(f"发现媒体库 {lib_name} 需要更新演员信息")
+                found = True
+                break
+        
+        return found
+
     def scrap_library(self):
         """
         扫描整个媒体库，刮削演员信息
@@ -352,9 +365,9 @@ class PersonMetaLib(_PluginBase):
                 logger.info(f"开始刮削媒体库 [{library.name}] 的演员信息 ...")
 
                 # add by y,2024.08.25
-                if library.name in subscribe_medias:
-                    logger.info(f"发现媒体库 {library.name} 不需要更新演员信息，忽略掉它...")
-                    continue
+                if False == match_library_name(library.name,subscribe_medias):
+                    logger.info(f"媒体库 {library.name} 不需要更新演员信息，忽略掉它...")
+                    confinue
 
                 for item in self.mschain.items(server, library.id):
                     if not item:
