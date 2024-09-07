@@ -351,6 +351,19 @@ class PersonMetaLib(_PluginBase):
         """
         扫描整个媒体库，刮削演员信息
         """
+        # pattern:需要匹配的媒体库名称
+        # match_list: 配置文件中的媒体名称
+        # 匹配规则是从头开始的模糊匹配
+        def __match_library_name(self,lib_name,match_list):
+            found=False
+            for e in match_list:
+                if re.match(lib_name,e):
+                    logger.info(f"发现媒体库 {lib_name} 需要更新演员信息")
+                    found = True
+                    break
+        
+            return found
+
         # 所有媒体服务器
         if not settings.MEDIASERVER:
             return
@@ -365,7 +378,7 @@ class PersonMetaLib(_PluginBase):
                 logger.info(f"开始刮削媒体库 [{library.name}] 的演员信息 ...")
 
                 # add by y,2024.08.25
-                if False == match_library_name(library.name,subscribe_medias):
+                if False == __match_library_name(library.name,subscribe_medias):
                     logger.info(f"媒体库 {library.name} 不需要更新演员信息，忽略掉它...")
                     confinue
 
