@@ -40,7 +40,7 @@ class PersonMetaLib(_PluginBase):
     # 插件图标
     plugin_icon = "https://raw.githubusercontent.com/yusiheng/MoviePilot-Plugins/main/icons/actorperson.png"
     # 插件版本
-    plugin_version = "0.71"
+    plugin_version = "0.72"
     # 插件作者
     plugin_author = "yusiheng"
     # 作者主页
@@ -354,7 +354,7 @@ class PersonMetaLib(_PluginBase):
         # pattern:需要匹配的媒体库名称
         # match_list: 配置文件中的媒体名称
         # 匹配规则是从头开始的模糊匹配
-        def __match_library_name(self,lib_name,match_list):
+        def __match_library_name(lib_name,match_list):
             found=False
             for e in match_list:
                 if re.match(lib_name,e):
