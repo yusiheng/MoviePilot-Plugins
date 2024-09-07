@@ -40,7 +40,7 @@ class PersonMetaLib(_PluginBase):
     # 插件图标
     plugin_icon = "https://raw.githubusercontent.com/yusiheng/MoviePilot-Plugins/main/icons/actorperson.png"
     # 插件版本
-    plugin_version = "0.73"
+    plugin_version = "0.74"
     # 插件作者
     plugin_author = "yusiheng"
     # 作者主页
@@ -357,7 +357,7 @@ class PersonMetaLib(_PluginBase):
         def __match_library_name(lib_name,match_list):
             found=False
             for e in match_list:
-                if re.match(lib_name,e):
+                if re.match(e,lib_name):
                     logger.info(f"发现媒体库 {lib_name} 需要更新演员信息")
                     found = True
                     break
