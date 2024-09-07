@@ -40,7 +40,7 @@ class PersonMetaLib(_PluginBase):
     # 插件图标
     plugin_icon = "https://raw.githubusercontent.com/yusiheng/MoviePilot-Plugins/main/icons/actorperson.png"
     # 插件版本
-    plugin_version = "0.72"
+    plugin_version = "0.73"
     # 插件作者
     plugin_author = "yusiheng"
     # 作者主页
@@ -380,7 +380,7 @@ class PersonMetaLib(_PluginBase):
                 # add by y,2024.08.25
                 if False == __match_library_name(library.name,subscribe_medias):
                     logger.info(f"媒体库 {library.name} 不需要更新演员信息，忽略掉它...")
-                    confinue
+                    continue
 
                 for item in self.mschain.items(server, library.id):
                     if not item:
