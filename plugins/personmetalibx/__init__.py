@@ -38,7 +38,7 @@ class PersonMetaLibx(_PluginBase):
     # 插件图标
     plugin_icon = "https://raw.githubusercontent.com/yusiheng/MoviePilot-Plugins/main/icons/actorperson.png"
     # 插件版本
-    plugin_version = "2.0.4"
+    plugin_version = "2.1.0"
     # 插件作者
     plugin_author = "yusiheng"
     # 作者主页
@@ -46,7 +46,7 @@ class PersonMetaLibx(_PluginBase):
     # 插件配置项ID前缀
     plugin_config_prefix = "personmetalibx_"
     # 加载顺序
-    plugin_order = 24
+    plugin_order = 2
     # 可使用的用户级别
     auth_level = 2
 
