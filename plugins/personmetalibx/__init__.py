@@ -32,15 +32,15 @@ from app.utils.string import StringUtils
 
 class PersonMetaLibx(_PluginBase):
     # 插件名称
-    plugin_name = "演职人员刮削"
+    plugin_name = "演职人员刮削x"
     # 插件描述
     plugin_desc = "刮削演职人员图片以及中文名称。"
     # 插件图标
     plugin_icon = "https://raw.githubusercontent.com/yusiheng/MoviePilot-Plugins/main/icons/actorperson.png"
     # 插件版本
-    plugin_version = "2.0.3"
+    plugin_version = "2.0.4"
     # 插件作者
-    plugin_author = "jxxghp"
+    plugin_author = "yusiheng"
     # 作者主页
     author_url = "https://github.com/yusiheng"
     # 插件配置项ID前缀
