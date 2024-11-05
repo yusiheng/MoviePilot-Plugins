@@ -14,10 +14,11 @@
         "name": "官方市场V2的演职人员刮削",
         "description": "刮削演职人员图片以及中文名称。",
         "labels": "媒体库,刮削",
-        "version": "2.1.0",
+        "version": "2.1.1",
         "icon": "https://raw.githubusercontent.com/yusiheng/MoviePilot-Plugins/main/icons/actorperson.png",
         "author": "yusiheng",
         "level": 2,
+        "v2": true,
         "history": {
             "v2.0": "兼容MoviePilot V2 版本",
             "v1.4": "人物图片调整为优先从TMDB获取，避免douban图片CDN加载过慢的问题",
