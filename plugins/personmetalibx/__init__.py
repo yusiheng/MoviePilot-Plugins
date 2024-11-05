@@ -36,15 +36,15 @@ class PersonMetaLibx(_PluginBase):
     # 插件描述
     plugin_desc = "刮削演职人员图片以及中文名称。"
     # 插件图标
-    plugin_icon = "actor.png"
+    plugin_icon = "https://raw.githubusercontent.com/yusiheng/MoviePilot-Plugins/main/icons/actorperson.png"
     # 插件版本
-    plugin_version = "2.0.1"
+    plugin_version = "2.0.2"
     # 插件作者
     plugin_author = "jxxghp"
     # 作者主页
-    author_url = "https://github.com/jxxghp"
+    author_url = "https://github.com/yusiheng"
     # 插件配置项ID前缀
-    plugin_config_prefix = "personmeta_"
+    plugin_config_prefix = "personmetalibx_"
     # 加载顺序
     plugin_order = 24
     # 可使用的用户级别
