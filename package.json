@@ -17,7 +17,7 @@
         "version": "2.0.2",
         "icon": "https://raw.githubusercontent.com/yusiheng/MoviePilot-Plugins/main/icons/actorperson.png",
         "author": "jxxghp",
-        "level": 1,
+        "level": 2,
         "history": {
             "v2.0": "兼容MoviePilot V2 版本",
             "v1.4": "人物图片调整为优先从TMDB获取，避免douban图片CDN加载过慢的问题",

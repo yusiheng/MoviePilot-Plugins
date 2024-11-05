@@ -38,7 +38,7 @@ class PersonMetaLibx(_PluginBase):
     # 插件图标
     plugin_icon = "https://raw.githubusercontent.com/yusiheng/MoviePilot-Plugins/main/icons/actorperson.png"
     # 插件版本
-    plugin_version = "2.0.2"
+    plugin_version = "2.0.3"
     # 插件作者
     plugin_author = "jxxghp"
     # 作者主页
@@ -48,7 +48,7 @@ class PersonMetaLibx(_PluginBase):
     # 加载顺序
     plugin_order = 24
     # 可使用的用户级别
-    auth_level = 1
+    auth_level = 2
 
     # 退出事件
     _event = threading.Event()
