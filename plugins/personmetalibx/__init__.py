@@ -30,7 +30,7 @@ from app.utils.http import RequestUtils
 from app.utils.string import StringUtils
 
 
-class PersonMeta(_PluginBase):
+class PersonMetaLibx(_PluginBase):
     # 插件名称
     plugin_name = "演职人员刮削"
     # 插件描述
