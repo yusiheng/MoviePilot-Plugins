@@ -15,7 +15,7 @@
         "description": "刮削演职人员图片以及中文名称。",
         "labels": "媒体库,刮削",
         "version": "2.0.1",
-        "icon": "actor.png",
+        "icon": "https://raw.githubusercontent.com/yusiheng/MoviePilot-Plugins/main/icons/actorperson.png",
         "author": "jxxghp",
         "level": 1,
         "history": {
@@ -23,5 +23,5 @@
             "v1.4": "人物图片调整为优先从TMDB获取，避免douban图片CDN加载过慢的问题",
             "v1.3": "修复v1.8.5版本后刮削报错问题"
         }
-    },
+    }
 }
